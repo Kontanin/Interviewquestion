@@ -1,0 +1,34 @@
+1.{
+"update_id":"c0efd8a1-b3b8-49b7-92b1-69edc8bd6c0c",
+"username":"jenna",
+"ts":15031275211,
+"newSteps":17
+
+}
+
+ความจะไม่ในใจupdateที่ผิด
+
+อัตเดตโดยไปที่8081
+
+2.
+get http://localhost:8080/users/{username}/steps
+
+200
+{
+"cumulativeSteps":183,"ts":1503031279439}
+
+code 404(not found)
+body {"error":"User does n't exist"
+}
+
+ไม่ได้เก็บข้อมูลเยอะ
+websocket  
+
+Library:
+1.ws
+2.express
+3.koa
+4.hapi
+5.restify
+
+shold return  close() that shut down the server from both api and rest api
