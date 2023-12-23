@@ -3,22 +3,26 @@
 module.exports = function stepService(store) {
   const service = {};
 
-  service.get = (username) => store[username];
+
+
+  service.get = (username) => {
+    if(typeof store[username] !=='object'){
+      return undefined
+    }
+    return store[username]
+  };
 
   service.add = (username, ts, newSteps) => {
-    // Assume that `store` is initially an empty object {}. An example `store` is:
-    // {
-    //   jenna: {
-    //     ts: 1503256778463,
-    //     cumulativeSteps: 12323,
-    //   },
-    //   james: {
-    //     ts: 1503256824767,
-    //     cumulativeSteps: 587,
-    //   },
-    // }
-
+    if(store[username]){
+      store[username].cumulativeSteps=store[username].cumulativeSteps+newSteps
+      store[username].ts=ts
+    }
+    else{
+      store[username]={"ts":ts,"cumulativeSteps":newSteps}
+      
+    }
   };
 
   return service;
 };
+

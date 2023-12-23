@@ -15,6 +15,7 @@
   "dependencies": {
     "@hapi/hapi": "^19.1.1",
     "express": "^4.17.1",
+    "http-status-codes": "^2.3.0",
     "koa": "^2.11.0",
     "request": "^2.88.2",
     "restify": "^8.5.1",
