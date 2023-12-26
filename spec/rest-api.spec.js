@@ -46,6 +46,7 @@ describe('Rest API', () => {
     it('returns 200 with expected step count', (done) => {
       request.get(`${baseURL}/users/jenna/steps`, (error, response) => {
         const jsonBody = JSON.parse(response.body);
+
         expect(jsonBody.cumulativeSteps).toEqual(12323);
         expect(jsonBody.ts).toEqual(1503256778463);
         done();
